@@ -1,6 +1,8 @@
 # E居—智能家居系统
 
-## 主要特点
+<a href="#English">English</a>   <a href="#chinese">简体中文</a>
+
+## <p id="chinese">主要特点</p>
 
 - 基于MQTT协议
 - 硬件基于Arduino，方便开发
@@ -12,7 +14,15 @@
 - APP采用Material Design风格
 - 网关与服务端可以部署在Windows、Linux、macOS及树莓派平台上
 
+## 待添加功能
+
+- 使用Tensorflow学习用户习惯
+- 利用kafka分发事件
+- ios APP
+
 ## 视频展示
 
 `此处有视频`
+
+# <p id="English">EHome SmartHome with Arduino and MQTT</p>
 

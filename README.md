@@ -2,7 +2,7 @@
 
 <a href="#English">English</a> <a href="#chinese">简体中文</a>
 
-[项目说明](https://github.com/lhtdeg/IOT-SmartHome/wiki/%E9%A6%96%E9%A1%B5) [Instruction](https://github.com/lhtdeg/IOT-SmartHome/wiki)
+[Instruction](https://github.com/lhtdeg/IOT-SmartHome/wiki) [项目说明](https://github.com/lhtdeg/IOT-SmartHome/wiki/%E9%A6%96%E9%A1%B5) 
 
 <a href="#demo">Demo</a>
 

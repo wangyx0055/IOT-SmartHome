@@ -23,7 +23,7 @@
 
 - 使用Tensorflow学习用户习惯
 - 利用kafka分发事件
-- ios APP
+- iOS APP开发
 
 ## 视频展示
 

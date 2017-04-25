@@ -24,7 +24,7 @@ divice-mac使用硬件mac地址（不带任何符号）表示
 
 #### 发布事件
 
-可以通过这种形式发送各种事件主题：`iot/evt/<event-id>/fmt/<format>`
+可以通过这种形式发送各种事件主题：`iot/id/<clientID>/evt/<event-id>/fmt/<format>`
 
 设置`<event-id>`可以将不同的事件类型分类，可以自己定义事件值。`<format>`设置为json。消息应编码成JSON格式，它必须包含单个名为"d"的顶级属性。
 
@@ -48,7 +48,7 @@ divice-mac使用硬件mac地址（不带任何符号）表示
 
 #### 订阅命令
 
-订阅命令的Topic应为以下格式：`iot/cmd/<cmd-type>/fmt/<format>`
+订阅命令的Topic应为以下格式：`iot/id/<clientID>/cmd/<cmd-type>/fmt/<format>`
 
 设置`<cmd-type>`可将不同的类型分类，可以自己定义事件值。也可以使用"+"作为通配符来设置`cmd-type`，这样可以订阅各种类型命令。 `<format>`设置为json。
 
@@ -57,4 +57,24 @@ divice-mac使用硬件mac地址（不带任何符号）表示
   "cmd":"open a light"
 }
 ```
+### 服务端
+#### 连接到MQTT服务器
+IoT 服务的服务端与设备端相同，但 MQTT 连接选项格式之间存在一些差异：
+
+clientID的格式为`d:<orgid>:<server-id>`
+
+其中orgid指明了隶属于哪个应用
+
+server-id是为服务设置的唯一id
+#### 订阅命令
+服务端可以订阅两种类型的事件：1.来自设备端的消息 2.系统生成的连接监视器消息
+- 订阅设备端事件的主题应为一下格式：`iot/id/+/evt/<event-id>/fmt/<format>`
+使用+作为通配符可以订阅所有id的主题
+- 订阅系统事件的主题应为以下格式：`iot/type/<type-id>/id/+/mon`
+type-id表明消息类型
+通过订阅系统事件，每次设备与MQTT服务器连接或断开，都可收到消息
+#### 发布命令
+发布命令的主题应为一下格式：`iot/id/<clientID>/cmd/<cmd-type>/fmt/<format>`
+它应与设备端订阅主题一致。
+
 
